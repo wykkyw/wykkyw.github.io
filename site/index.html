@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<section>
+				<a href="index.html" class="logo">
+					<img src="img/steemit.svg" alt="" />
+				</a>
+				<div class="mainNav">
+					<ul class="clearfix">
+						<li><a href="#a">关于</a></li>
+						<li><a href="#b">兴趣</a></li>
+						<li><a href="#c">联系</a></li>
+					</ul>
+				</div>
+				</section>	
+				<a id="a"></a>
+				<h2>大家好！！！</h2>
+				<p>我是浙江邮电职业技术学院移动应用开发161班的学生</p>
+				<p>对于web这门学科持探索态度学习虽然很多时候没有听但还是收获颇多</p>
+				<p> 我感兴趣的东西不多但是我会认真对待</p>
+			</header>
+			<body>
+				<main>
+			<a id="b"></a>
+			<section class="aihao">
+				<div>
+					<h2>我的兴趣</h2>
+				<ul class="ah clearfix">
+					<li><a href="#">游戏</a></li>
+					<li><a href="#">运动</a></li>
+					
+				</ul>
+				<p>真的没什么特别感兴趣的...QAQ</p>
+				</div>
+				
+			</section>
+			
+			
+			<section class="shili">
+				
+				<div class="clearfix">
+					<h2>照片欣赏</h2>
+					<figure>
+							<figcaption>代表项目</figcaption>
+							<img src="img/tu.jpg" alt="" />
+						</figure>
+						<figure>
+							<figcaption>代表项目</figcaption>
+							<img src="img/tu.jpg" alt="" />
+						</figure>
+						<figure>
+							<figcaption>代表项目</figcaption>
+							<img src="img/tu.jpg" alt="" />
+						</figure>
+						<figure>
+							<figcaption>代表项目</figcaption>
+							<img src="img/tu.jpg" alt="" />
+						</figure>
+						<figure>
+							<figcaption>代表项目</figcaption>
+							<img src="img/tu.jpg" alt="" />
+						</figure>
+					<figure>
+							<figcaption>代表项目</figcaption>
+							<img src="img/tu.jpg" alt="" />
+						</figure>
+				</div>
+				
+			</section>
+			<section class="contactContainer">
+					<a id="c"></a>
+					<h2>联系我们</h2>
+					<p>前端技术发展非常迅速，个人视野有限，希望大家可以通过广泛的交流互动，实现共同提高！！期待您的回复！！</p>
+					<dl>
+						<dt>邮箱</dt>
+						<dd>1309562521@qq.com</dd>
+						<dt>QQ</dt>
+						<dd>1309562521</dd>
+					</dl>
+					<div class="contact">
+						<input type="text" name="name" id="name" placeholder="名字" />
+						<input type="text" name="name" id="name" placeholder="邮箱" />
+						<select name="fav" id="fav">
+							<option value="fav">兴趣</option>
+							<option value="play">游戏</option>
+							<option value="sport">运动</option>
+						</select>
+						<textarea name="message" id="message" placeholder="留言"></textarea>
+						<input type="submit" name="submit" id="submit" value="提交信息"/>
+					</div>
+				</section>
+			
+			</main>
+			
+			<footer>
+				
+			<p>
+					&copy; 雷同的话，我有什么办法我也很绝望啊！
+				</p>
+				<a id="goTop" href="#">顶部</a>>
+			    </nav>
+			</footer>
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('header a, .rightNav a').on('click', function(e) {
+					e.preventDefault();
+					$('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500);
+					
+				}); 
+				$('#goTop').on('click', function(e) {
+					e.preventDefault();
+					$('html, body').animate({ scrollTop: 0}, 500);
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -75,13 +75,54 @@
 				</div>
 				
 			</section>
+			<section class="contactContainer">
+					<a id="c"></a>
+					<h2>联系我们</h2>
+					<p>前端技术发展非常迅速，个人视野有限，希望大家可以通过广泛的交流互动，实现共同提高！！期待您的回复！！</p>
+					<dl>
+						<dt>邮箱</dt>
+						<dd>1309562521@qq.com</dd>
+						<dt>QQ</dt>
+						<dd>1309562521</dd>
+					</dl>
+					<div class="contact">
+						<input type="text" name="name" id="name" placeholder="名字" />
+						<input type="text" name="name" id="name" placeholder="邮箱" />
+						<select name="fav" id="fav">
+							<option value="fav">兴趣</option>
+							<option value="play">游戏</option>
+							<option value="sport">运动</option>
+						</select>
+						<textarea name="message" id="message" placeholder="留言"></textarea>
+						<input type="submit" name="submit" id="submit" value="提交信息"/>
+					</div>
+				</section>
 			
 			</main>
-			</body>
 			
 			<footer>
 				
+			<p>
+					&copy; 雷同的话，我有什么办法我也很绝望啊！
+				</p>
+				<a id="goTop" href="#">顶部</a>>
+			    </nav>
 			</footer>
 		</div>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('header a, .rightNav a').on('click', function(e) {
+					e.preventDefault();
+					$('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500);
+					
+				}); 
+				$('#goTop').on('click', function(e) {
+					e.preventDefault();
+					$('html, body').animate({ scrollTop: 0}, 500);
+				});
+			});
+		</script>
 	</body>
 </html>

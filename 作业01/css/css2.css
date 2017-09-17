@@ -1,0 +1,16 @@
+body{
+     background: url(../img/亚瑟王.jpg.jpg);
+	background-size: 100%;
+	color: #fff;
+	
+}
+h1{
+	font-size: 20px;
+	text-decoration: underline;
+}
+p{
+	font-size:20px;
+	text-indent: 2em;
+	line-height: 1.5em;
+}
+

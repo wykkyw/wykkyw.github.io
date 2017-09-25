@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>表格的颜色控制</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#color {
+				border-collapse: collapse;
+				border: 1px solid rgba(0, 0, 0, .2);
+				width: 100%;
+			}
+			#color td {
+				border: 1px solid rgba(0, 0, 0, .2);
+				height: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<table id="color">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	<script type="text/javascript">
+		var oColor = document.getElementById("color");
+		var oTr=oColor.getElementsByTagName("tr");
+		var oTd = oColor.getElementsByTagName("td");
+		for (var i = 0; i < oTd.length; i++) {
+		oTd[i].style.background="hsla("+ i * 3 + ",50%,50%,.5)";
+		}
+
+	</script>	
+	</body>
+</html>

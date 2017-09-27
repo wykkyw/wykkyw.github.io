@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>NumberGame</title>
+		
+		<style type="text/css">
+			
+			*{
+				margin: auto;
+				padding: auto;
+				
+			}
+			.gameTitle{
+				position: absolute;
+				top: 30%;
+				right: 50%;
+			}
+			
+			.inputButton{
+				position: absolute;
+				top: 36%;
+				right: 50%;
+				
+			}
+			#Num{
+			
+				border-radius: 30px 0 0 30px;
+				height: 30px;
+				text-indent: 1em;
+				position: relative;
+              
+				
+			}
+			#guess,
+			#again{
+				color: ;
+				border-radius: 0 30px 30px 0;
+				position: absolute;
+				height: 35px;
+				top: 0;
+				right: -42px;
+				color:#000;
+                background-color:#fff;
+                width: 50px;
+				
+			}
+			#again{
+				display: none;
+			}
+			.resultPanel{
+				position: absolute;
+				top: 44%;
+				right: 45%;
+			}
+			.resultPanel .hispital span{
+				display: block;
+				width: 250px;
+			}
+			
+		</style>
+		
+		
+	</head>
+	<body>
+		<div class="gameTitle">
+			 <h2>猜数字游戏</h2>
+		</div>
+		
+		<div class="inputButton">
+		     <input type="number" id="Num" placeholder="0-10整数，6次机会" />
+		     <input type="button" id="guess" value="提交" />
+		     <input type="button" id="again" value="重来" />
+		</div>
+		<div class="resultPanel">
+			<div class="Time">
+				剩余次数:
+				<span>6</span>
+			</div>
+			<div class="hispital">
+				猜测历史:
+				<span></span>
+				<br />
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			var rangeNum=10;
+			var guessTimes=6;
+			var goalNum=Math.floor(Math.random()*(rangeNum+1));
+			var numTemp=0;
+			var ibtNum=document.querySelector(".inputButton #Num");
+			var ibtGuess=document.querySelector(".inputButton #guess");
+			var ibtAgain=document.querySelector(".inputButton #again");
+			var spanTime=document.querySelector(".resultPanel .Time span");
+			var hispitalSpan=document.querySelector(".resultPanel .hispital span");
+			
+			console.log(goalNum);
+			ibtGuess.addEventListener("click",checkguess);
+			ibtAgain.addEventListener("click",repeatgame);
+			spanTime.innerHTML = guessTimes;
+			ibtNum.setAttribute('placeholder',"0-"+rangeNum+"整数,"+guessTimes+"次机会");
+			
+			function checkguess(){
+				numTemp = parseInt(ibtNum.value);
+			
+			if (isNaN(numTemp)) {
+					hispitalSpan.innerHTML+="该次输入"+numTemp+"不是数字<br>";
+				}
+			
+			  if (guessTimes-->0) {
+			  	if (numTemp>goalNum) {
+			  		hispitalSpan.innerHTML+="这次猜的"+numTemp+",偏大了<br>"
+			  	}else if (numTemp<goalNum) {
+			  		hispitalSpan.innerHTML+="这次猜的"+numTemp+",偏小了<br>"
+			  	}else if (numTemp==goalNum) {
+			  		hispitalSpan.innerHTML+="正确答案为"+goalNum+"恭喜你答对了。"
+			  		closeGame();
+			  	}else{
+			  		hispitalSpan.innerHTML+="出现错误 <br>"
+			  	}
+			  }
+			  
+			  if (guessTimes<=0) {
+			  	hispitalSpan.innerHTML+="次数用尽，游戏结束"
+			  	closeGame();
+			  }
+			  
+			  spanTime.innerHTML=guessTimes;
+			  ibtNum.value="";
+			  ibtNum.focus();
+			}
+			
+			function closeGame(){
+				ibtNum.disabled=true;
+				ibtGuess.style.display="none";
+				ibtAgain.style.display="block";
+			}
+			
+			function repeatgame(){
+				goalNum=Math.floor(Math.random()*(rangeNum+1))
+				console.log(goalNum)
+				guessTimes=6;
+				spanTime.innerHTML=guessTimes;
+				ibtNum.disabled=false;
+				ibtGuess.style.display="block";
+				ibtAgain.style.display="none";
+				hispitalSpan.innerHTML+="重新开始游戏"
+				ibtNum.focus();
+			}
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

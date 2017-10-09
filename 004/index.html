@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>41吴义凯抽奖系统</title>
+		
+	</head>
+	<body>
+		<h1>一等奖</h1><input type="text" class="text" value="" disabled="disabled"/>
+		<h1>二等奖</h1><input type="text" class="text" value="" disabled="disabled"/><input type="text" class="text" value="" disabled="disabled"/>
+		<h1>三等奖</h1><input type="text" class="text" value="" disabled="disabled"/><input type="text" class="text" value="" disabled="disabled"/><input type="text" class="text" value="" disabled="disabled"/>
+		<input type="button" id="btn" value="抽取" />
+	</body>
+	
+<script type="text/javascript">
+			   var oText = document.getElementsByClassName("text"),
+				obtn   = document.getElementById("btn"),
+				nums = 45,
+				Number = [];
+			btn.addEventListener("click",draw);
+			function draw(){
+				for(var i=0;i<6;i++)
+				{
+					Number[i]=Math.floor(Math.random()*nums+1);
+					for(var j=0;j<i;j++)
+					{
+						if(Number[i]==Number[j])
+							i--;
+					}
+				}
+				for(var i=0;i<6;i++){
+					oText[i].value=Number[i];
+				}
+		    	}
+			
+		</script>
+	
+</html>
